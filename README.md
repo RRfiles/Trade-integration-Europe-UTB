@@ -2,7 +2,7 @@
 
 The folder include all replication package, containing the DTA and Do files with the dataset and scripts needed to obtain the main results shown in the research article. The files are ready to be used in STATA.
 
-8 Archives are included. 3 do.files that contain the code to replicate tables and figures of the paper and 5 dta files, including the region-to-region database (Data) in a zip file.
+8 Files are included. 3 do.files that contain the code to replicate tables and figures of the paper and 5 dta files, including the region-to-region database (Data) in a zip file.
 •	Baseline_models.do
 •	Figures.do
 •	Robustness.do
