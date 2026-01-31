@@ -1109,6 +1109,28 @@ use UTB_results_europe.dta
 forvalues i=2/9{
 	merge 1:1 i j using UTB_results_europe`i'
 	drop _merge
+
+
+*** APPENDIX 4
+
+clear all
+use Data.dta
+gen pairid=i+j
+
+drop if ee2==.
+drop if i=="IS00"
+drop if j=="IS00"
+bys year i: egen gdp=total(gdp_j)
+gen E_m=(ee2*gdp)/(gdp_i*gdp_j)
+
+
+
+corr intra inter lndist contig_r contig_c comlang_off EU UEM island coast inst outermost island_c coast_c nocoast_c mega mega_both
+
+reg E_m intra inter lndist contig_r contig_c comlang_off EU UEM island coast inst outermost island_c coast_c nocoast_c mega mega_both
+vif
+
 }
 corr lnUTB*
 save UTB_results_all, replace
+
