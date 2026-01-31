@@ -1109,7 +1109,9 @@ use UTB_results_europe.dta
 forvalues i=2/9{
 	merge 1:1 i j using UTB_results_europe`i'
 	drop _merge
-
+}
+corr lnUTB*
+save UTB_results_all, replace
 
 *** APPENDIX 4
 
@@ -1129,8 +1131,4 @@ corr intra inter lndist contig_r contig_c comlang_off EU UEM island coast inst o
 
 reg E_m intra inter lndist contig_r contig_c comlang_off EU UEM island coast inst outermost island_c coast_c nocoast_c mega mega_both
 vif
-
-}
-corr lnUTB*
-save UTB_results_all, replace
 
